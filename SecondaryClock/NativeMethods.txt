@@ -1,0 +1,3 @@
+﻿SHAppBarMessage
+BitBlt
+ABM_GETTASKBARPOS
