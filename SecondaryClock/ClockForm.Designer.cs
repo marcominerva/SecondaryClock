@@ -64,6 +64,7 @@ partial class ClockForm
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(148, 45);
+            this.ControlBox = false;
             this.Controls.Add(this.DateLabel);
             this.Controls.Add(this.TimeLabel);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);

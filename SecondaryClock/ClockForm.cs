@@ -23,6 +23,8 @@ public partial class ClockForm : Form
 
     private void UpdateClock()
     {
+        BringToFront();
+
         var now = DateTime.Now;
         TimeLabel.Text = now.ToShortTimeString();
         DateLabel.Text = now.ToShortDateString();
