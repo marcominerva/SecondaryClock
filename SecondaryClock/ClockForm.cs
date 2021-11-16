@@ -2,21 +2,21 @@ using SecondaryClock.Taskbar;
 
 namespace SecondaryClock;
 
-public partial class frmClock : Form
+public partial class ClockForm : Form
 {
-    public frmClock()
+    public ClockForm()
     {
         InitializeComponent();
+        UpdateClock();
 
         ForeColor = TaskbarHelper.UsesLightTheme() ? Color.Black : Color.White;
         BackColor = TaskbarHelper.GetColor();
         TransparencyKey = BackColor;
+        Size = new Size(90, 45);
 
-        UpdateClock();
-
-        var screen = Screen.AllScreens.Last();
-        Top = screen.Bounds.Height - Height;
-        Left = screen.Bounds.X + screen.Bounds.Width - Width + 1;
+        var screen = Screen.AllScreens.LastOrDefault()?.Bounds ?? Screen.PrimaryScreen.Bounds;
+        Top = screen.Height - Height - 1;
+        Left = screen.X + screen.Width - Width + 1;
     }
 
     private void ClockTimer_Tick(object sender, EventArgs e) => UpdateClock();

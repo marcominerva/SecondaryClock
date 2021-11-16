@@ -1,6 +1,6 @@
 ﻿namespace SecondaryClock;
 
-partial class frmClock
+partial class ClockForm
 {
     /// <summary>
     ///  Required designer variable.
@@ -36,18 +36,18 @@ partial class frmClock
             // 
             // TimeLabel
             // 
-            this.TimeLabel.Location = new System.Drawing.Point(0, 0);
+            this.TimeLabel.Location = new System.Drawing.Point(-1, -2);
             this.TimeLabel.Name = "TimeLabel";
-            this.TimeLabel.Size = new System.Drawing.Size(93, 24);
+            this.TimeLabel.Size = new System.Drawing.Size(90, 22);
             this.TimeLabel.TabIndex = 0;
             this.TimeLabel.Text = "Time";
             this.TimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DateLabel
             // 
-            this.DateLabel.Location = new System.Drawing.Point(0, 22);
+            this.DateLabel.Location = new System.Drawing.Point(0, 21);
             this.DateLabel.Name = "DateLabel";
-            this.DateLabel.Size = new System.Drawing.Size(93, 26);
+            this.DateLabel.Size = new System.Drawing.Size(90, 23);
             this.DateLabel.TabIndex = 1;
             this.DateLabel.Text = "Date";
             this.DateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -60,11 +60,12 @@ partial class frmClock
             // 
             // frmClock
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(93, 50);
+            this.ClientSize = new System.Drawing.Size(148, 45);
             this.Controls.Add(this.DateLabel);
             this.Controls.Add(this.TimeLabel);
+            this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmClock";
             this.ShowIcon = false;
