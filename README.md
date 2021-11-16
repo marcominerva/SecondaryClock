@@ -1,2 +1,2 @@
-# SecondaryClock
-A clock that is shows on second monitor for Windows 11
+# Secondary Clock
+A clock that is shows on secondary (last) Taskbar on Windows 11.
