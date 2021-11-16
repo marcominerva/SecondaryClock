@@ -26,5 +26,8 @@ public partial class ClockForm : Form
         var now = DateTime.Now;
         TimeLabel.Text = now.ToShortTimeString();
         DateLabel.Text = now.ToShortDateString();
+
+        DateTooltip.SetToolTip(TimeLabel, now.ToLongTimeString());
+        DateTooltip.SetToolTip(DateLabel, now.ToLongDateString());
     }
 }

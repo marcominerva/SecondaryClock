@@ -32,6 +32,7 @@ partial class ClockForm
             this.TimeLabel = new System.Windows.Forms.Label();
             this.DateLabel = new System.Windows.Forms.Label();
             this.ClockTimer = new System.Windows.Forms.Timer(this.components);
+            this.DateTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // TimeLabel
@@ -58,7 +59,7 @@ partial class ClockForm
             this.ClockTimer.Interval = 500;
             this.ClockTimer.Tick += new System.EventHandler(this.ClockTimer_Tick);
             // 
-            // frmClock
+            // ClockForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -67,7 +68,7 @@ partial class ClockForm
             this.Controls.Add(this.TimeLabel);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmClock";
+            this.Name = "ClockForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
@@ -82,4 +83,5 @@ partial class ClockForm
     private Label TimeLabel;
     private Label DateLabel;
     private System.Windows.Forms.Timer ClockTimer;
+    private ToolTip DateTooltip;
 }
