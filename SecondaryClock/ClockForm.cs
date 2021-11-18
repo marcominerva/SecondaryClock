@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using SecondaryClock.Taskbar;
 
 namespace SecondaryClock;
@@ -32,4 +33,7 @@ public partial class ClockForm : Form
         DateTooltip.SetToolTip(TimeLabel, now.ToLongTimeString());
         DateTooltip.SetToolTip(DateLabel, now.ToLongDateString());
     }
+
+    private void TaskManagerMenuItem_Click(object sender, EventArgs e)
+        => Process.Start(new ProcessStartInfo { FileName = "taskmgr.exe", Verb = "runas", UseShellExecute = true });
 }

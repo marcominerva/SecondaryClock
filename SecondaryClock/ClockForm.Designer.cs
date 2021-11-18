@@ -33,6 +33,9 @@ partial class ClockForm
             this.DateLabel = new System.Windows.Forms.Label();
             this.ClockTimer = new System.Windows.Forms.Timer(this.components);
             this.DateTooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.ClockContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.TaskManagerMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ClockContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // TimeLabel
@@ -59,11 +62,28 @@ partial class ClockForm
             this.ClockTimer.Interval = 500;
             this.ClockTimer.Tick += new System.EventHandler(this.ClockTimer_Tick);
             // 
+            // ClockContextMenu
+            // 
+            this.ClockContextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.ClockContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TaskManagerMenuItem});
+            this.ClockContextMenu.Name = "ClockContextMenu";
+            this.ClockContextMenu.ShowImageMargin = false;
+            this.ClockContextMenu.Size = new System.Drawing.Size(186, 54);
+            // 
+            // TaskManagerMenuItem
+            // 
+            this.TaskManagerMenuItem.Name = "TaskManagerMenuItem";
+            this.TaskManagerMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.TaskManagerMenuItem.Text = "Gestione attività";
+            this.TaskManagerMenuItem.Click += new System.EventHandler(this.TaskManagerMenuItem_Click);
+            // 
             // ClockForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(148, 45);
+            this.ContextMenuStrip = this.ClockContextMenu;
             this.ControlBox = false;
             this.Controls.Add(this.DateLabel);
             this.Controls.Add(this.TimeLabel);
@@ -75,6 +95,7 @@ partial class ClockForm
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Clock";
             this.TopMost = true;
+            this.ClockContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
     }
@@ -85,4 +106,6 @@ partial class ClockForm
     private Label DateLabel;
     private System.Windows.Forms.Timer ClockTimer;
     private ToolTip DateTooltip;
+    private ContextMenuStrip ClockContextMenu;
+    private ToolStripMenuItem TaskManagerMenuItem;
 }
