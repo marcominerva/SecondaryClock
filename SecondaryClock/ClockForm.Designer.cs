@@ -29,6 +29,7 @@ partial class ClockForm
     private void InitializeComponent()
     {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClockForm));
             this.TimeLabel = new System.Windows.Forms.Label();
             this.DateLabel = new System.Windows.Forms.Label();
             this.ClockTimer = new System.Windows.Forms.Timer(this.components);
@@ -40,21 +41,15 @@ partial class ClockForm
             // 
             // TimeLabel
             // 
-            this.TimeLabel.Location = new System.Drawing.Point(-1, -2);
+            resources.ApplyResources(this.TimeLabel, "TimeLabel");
             this.TimeLabel.Name = "TimeLabel";
-            this.TimeLabel.Size = new System.Drawing.Size(90, 22);
-            this.TimeLabel.TabIndex = 0;
-            this.TimeLabel.Text = "Time";
-            this.TimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DateTooltip.SetToolTip(this.TimeLabel, resources.GetString("TimeLabel.ToolTip"));
             // 
             // DateLabel
             // 
-            this.DateLabel.Location = new System.Drawing.Point(0, 21);
+            resources.ApplyResources(this.DateLabel, "DateLabel");
             this.DateLabel.Name = "DateLabel";
-            this.DateLabel.Size = new System.Drawing.Size(90, 23);
-            this.DateLabel.TabIndex = 1;
-            this.DateLabel.Text = "Date";
-            this.DateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DateTooltip.SetToolTip(this.DateLabel, resources.GetString("DateLabel.ToolTip"));
             // 
             // ClockTimer
             // 
@@ -64,36 +59,33 @@ partial class ClockForm
             // 
             // ClockContextMenu
             // 
+            resources.ApplyResources(this.ClockContextMenu, "ClockContextMenu");
             this.ClockContextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ClockContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TaskManagerMenuItem});
             this.ClockContextMenu.Name = "ClockContextMenu";
             this.ClockContextMenu.ShowImageMargin = false;
-            this.ClockContextMenu.Size = new System.Drawing.Size(186, 54);
+            this.DateTooltip.SetToolTip(this.ClockContextMenu, resources.GetString("ClockContextMenu.ToolTip"));
             // 
             // TaskManagerMenuItem
             // 
+            resources.ApplyResources(this.TaskManagerMenuItem, "TaskManagerMenuItem");
             this.TaskManagerMenuItem.Name = "TaskManagerMenuItem";
-            this.TaskManagerMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.TaskManagerMenuItem.Text = "Gestione attività";
             this.TaskManagerMenuItem.Click += new System.EventHandler(this.TaskManagerMenuItem_Click);
             // 
             // ClockForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(148, 45);
             this.ContextMenuStrip = this.ClockContextMenu;
             this.ControlBox = false;
             this.Controls.Add(this.DateLabel);
             this.Controls.Add(this.TimeLabel);
-            this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ClockForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Clock";
+            this.DateTooltip.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.TopMost = true;
             this.ClockContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
