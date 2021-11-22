@@ -15,9 +15,11 @@ public partial class ClockForm : Form
         TransparencyKey = BackColor;
         Size = new Size(90, 45);
 
-        var screen = Screen.AllScreens.LastOrDefault()?.Bounds ?? Screen.PrimaryScreen.Bounds;
-        Top = screen.Height - Height - 1;
-        Left = screen.X + screen.Width - Width + 1;
+        var screen = Screen.AllScreens.Last().Bounds;
+        Top = screen.Height - Height - 6;
+        Left = screen.X + screen.Width - Width - 2;
+
+        TaskbarHelper.ShowOnTop(Handle);
     }
 
     private void ClockTimer_Tick(object sender, EventArgs e) => UpdateClock();

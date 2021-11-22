@@ -1,7 +1,10 @@
 ﻿using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using Windows.Win32;
+using Windows.Win32.Foundation;
 using Windows.Win32.Graphics.Gdi;
+using Windows.Win32.UI.Shell;
+using Windows.Win32.UI.WindowsAndMessaging;
 
 namespace SecondaryClock.Taskbar;
 
@@ -28,12 +31,15 @@ public static class TaskbarHelper
 
     public static Rectangle GetPosition()
     {
-        var data = new Windows.Win32.UI.Shell.APPBARDATA();
+        var data = new APPBARDATA();
         data.cbSize = (uint)Marshal.SizeOf(data);
 
         PInvoke.SHAppBarMessage(PInvoke.ABM_GETTASKBARPOS, ref data);
         return new Rectangle(data.rc.left, data.rc.top, data.rc.right - data.rc.left, data.rc.bottom - data.rc.top);
     }
+
+    public static void ShowOnTop(IntPtr Handle)
+        => PInvoke.SetWindowPos(new HWND(Handle), new HWND(new IntPtr(-1)), 0, 0, 0, 0, SET_WINDOW_POS_FLAGS.SWP_NOMOVE | SET_WINDOW_POS_FLAGS.SWP_NOSIZE);
 
     private static Color GetColorAt(Point location)
     {

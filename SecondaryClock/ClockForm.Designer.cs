@@ -43,13 +43,11 @@ partial class ClockForm
             // 
             resources.ApplyResources(this.TimeLabel, "TimeLabel");
             this.TimeLabel.Name = "TimeLabel";
-            this.DateTooltip.SetToolTip(this.TimeLabel, resources.GetString("TimeLabel.ToolTip"));
             // 
             // DateLabel
             // 
             resources.ApplyResources(this.DateLabel, "DateLabel");
             this.DateLabel.Name = "DateLabel";
-            this.DateTooltip.SetToolTip(this.DateLabel, resources.GetString("DateLabel.ToolTip"));
             // 
             // ClockTimer
             // 
@@ -59,18 +57,17 @@ partial class ClockForm
             // 
             // ClockContextMenu
             // 
-            resources.ApplyResources(this.ClockContextMenu, "ClockContextMenu");
             this.ClockContextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ClockContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TaskManagerMenuItem});
             this.ClockContextMenu.Name = "ClockContextMenu";
             this.ClockContextMenu.ShowImageMargin = false;
-            this.DateTooltip.SetToolTip(this.ClockContextMenu, resources.GetString("ClockContextMenu.ToolTip"));
+            resources.ApplyResources(this.ClockContextMenu, "ClockContextMenu");
             // 
             // TaskManagerMenuItem
             // 
-            resources.ApplyResources(this.TaskManagerMenuItem, "TaskManagerMenuItem");
             this.TaskManagerMenuItem.Name = "TaskManagerMenuItem";
+            resources.ApplyResources(this.TaskManagerMenuItem, "TaskManagerMenuItem");
             this.TaskManagerMenuItem.Click += new System.EventHandler(this.TaskManagerMenuItem_Click);
             // 
             // ClockForm
@@ -85,7 +82,6 @@ partial class ClockForm
             this.Name = "ClockForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.DateTooltip.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.TopMost = true;
             this.ClockContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);

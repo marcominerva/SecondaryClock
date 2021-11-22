@@ -1,3 +1,4 @@
 ﻿SHAppBarMessage
 BitBlt
 ABM_GETTASKBARPOS
+SetWindowPos
