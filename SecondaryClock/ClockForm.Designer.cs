@@ -36,6 +36,7 @@ partial class ClockForm
             this.DateTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.ClockContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.TaskManagerMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BringToFrontTimer = new System.Windows.Forms.Timer(this.components);
             this.ClockContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,6 +71,12 @@ partial class ClockForm
             resources.ApplyResources(this.TaskManagerMenuItem, "TaskManagerMenuItem");
             this.TaskManagerMenuItem.Click += new System.EventHandler(this.TaskManagerMenuItem_Click);
             // 
+            // BringToFrontTimer
+            // 
+            this.BringToFrontTimer.Enabled = true;
+            this.BringToFrontTimer.Interval = 1;
+            this.BringToFrontTimer.Tick += new System.EventHandler(this.BringToFrontTimer_Tick);
+            // 
             // ClockForm
             // 
             resources.ApplyResources(this, "$this");
@@ -96,4 +103,5 @@ partial class ClockForm
     private ToolTip DateTooltip;
     private ContextMenuStrip ClockContextMenu;
     private ToolStripMenuItem TaskManagerMenuItem;
+    private System.Windows.Forms.Timer BringToFrontTimer;
 }

@@ -8,7 +8,7 @@ public partial class ClockForm : Form
     public ClockForm()
     {
         InitializeComponent();
-        UpdateClock();
+        ClockTimer_Tick(this, EventArgs.Empty);
 
         ForeColor = TaskbarHelper.UsesLightTheme() ? Color.Black : Color.White;
         BackColor = TaskbarHelper.GetColor();
@@ -22,9 +22,7 @@ public partial class ClockForm : Form
         TaskbarHelper.ShowOnTop(Handle);
     }
 
-    private void ClockTimer_Tick(object sender, EventArgs e) => UpdateClock();
-
-    private void UpdateClock()
+    private void ClockTimer_Tick(object sender, EventArgs e)
     {
         BringToFront();
 
@@ -38,4 +36,7 @@ public partial class ClockForm : Form
 
     private void TaskManagerMenuItem_Click(object sender, EventArgs e)
         => Process.Start(new ProcessStartInfo { FileName = "taskmgr.exe", Verb = "runas", UseShellExecute = true });
+
+    private void BringToFrontTimer_Tick(object sender, EventArgs e)
+        => BringToFront();
 }
